@@ -2,6 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
       "github>Kesin11/renovate-config:oss",
+      "docker:pinDigests",
+      "helpers:pinGitHubActionDigests",
       "schedule:monthly"
     ],
     "regexManagers": [
