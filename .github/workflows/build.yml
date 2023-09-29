@@ -1,0 +1,21 @@
+name: Build image
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Pin major
+    - uses: actions/checkout@v3
+    - name: Set up Docker Buildx
+    # Pin patch
+      uses: docker/setup-buildx-action@v2.9.1
+    # Pin patch
+    - name: Docker Build
+      uses: docker/build-push-action@v4.2.1
+      with:
+        context: .
+        tags: my-otel:latest
