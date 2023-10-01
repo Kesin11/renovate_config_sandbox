@@ -13,6 +13,7 @@ jobs:
   actions-timeline:
     needs: call
     runs-on: ubuntu-latest
+    if: always()
     permissions:
       actions: read
     steps:
