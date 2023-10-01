@@ -1,0 +1,19 @@
+name: Compare Renovate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: korosuke613/actions/.github/workflows/renovate.yaml@main
+    secrets:
+      GH_PAT_FOR_RENOVATE: ${{ secrets.GITHUB_TOKEN }}
+
+  actions-timeline:
+    needs: call
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    steps:
+      - uses: Kesin11/actions-timeline@v1
