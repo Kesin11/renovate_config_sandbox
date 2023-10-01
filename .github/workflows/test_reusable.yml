@@ -6,6 +6,7 @@ on:
 
 jobs:
   call:
+    name: reusable
     uses: korosuke613/actions/.github/workflows/renovate.yaml@main
     secrets:
       GH_PAT_FOR_RENOVATE: ${{ secrets.GITHUB_TOKEN }}
