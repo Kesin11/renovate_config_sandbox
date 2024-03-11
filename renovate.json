@@ -1,19 +1,21 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": [
-      "github>Kesin11/renovate-config:oss",
-      "docker:pinDigests",
-      "helpers:pinGitHubActionDigests",
-      "schedule:monthly"
-    ],
-    "regexManagers": [
-      {
-        "fileMatch": ["^(Docker|Earth)file.*$"],
-        "matchStrings": [
-          "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
-        ],
-        "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-      }
-    ]
-  }
-  
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>Kesin11/renovate-config:oss",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests",
+    "schedule:monthly"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^(Docker|Earth)file.*$"
+      ],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s(ENV|ARG) .*?_VERSION=(?<currentValue>.*)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
+}
