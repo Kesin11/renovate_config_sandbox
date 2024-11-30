@@ -1,4 +1,4 @@
-FROM node:18.20.4@sha256:378c8dab305c9d2c0bf7bf17d2f97911c198e0f592a12e0081faaf0364599a22 as otel-builder
+FROM node:18.20.4@sha256:c5c88762e9097e7fa405e5713731ea924fa52da33a13929ed64d8a6b79b95c89 as otel-builder
 WORKDIR /builder
 # renovate: datasource=github-releases depName=open-telemetry/opentelemetry-collector-releases
 ARG OTELCOL_CONTRIB_VERSION=0.70.0
