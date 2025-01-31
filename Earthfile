@@ -1,6 +1,6 @@
 VERSION 0.7
     build:
-        FROM node:18.20.5@sha256:257e1321aaece1d0cf72cfa8a87e57adaf8262919ac8ebfe3a928180234a2d37 as otel-builder
+        FROM node:18.20.5@sha256:8b7f2b36c945174b27fe833689fcc47b78dd47de0eda2d6e868e6e4ec2c63ae0 as otel-builder
         WORKDIR /builder
         # renovate: datasource=github-releases depName=open-telemetry/opentelemetry-collector-releases
         ENV OTELCOL_CONTRIB_VERSION=0.70.0
